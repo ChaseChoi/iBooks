@@ -10,22 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--用户-->
-        <scene sceneID="vpD-iO-VFb">
-            <objects>
-                <viewController id="wLw-Qm-X5u" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xFd-wp-mqM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="tLB-V6-e2L"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="用户" image="icon-user-off" selectedImage="icon-user-on" id="DJg-z3-9q8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wtd-b0-LLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-345" y="26"/>
-        </scene>
         <!--管理-->
         <scene sceneID="R2F-qe-uF0">
             <objects>
@@ -71,7 +55,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="LSY-EL-Dgb" kind="relationship" relationship="viewControllers" id="Xbx-rY-TBC"/>
-                        <segue destination="wLw-Qm-X5u" kind="relationship" relationship="viewControllers" id="TbL-v5-yQP"/>
+                        <segue destination="mbC-Ed-YIU" kind="relationship" relationship="viewControllers" id="TbL-v5-yQP"/>
                         <segue destination="X8g-cq-dmq" kind="relationship" relationship="viewControllers" id="trK-nu-WgN"/>
                     </connections>
                 </tabBarController>
@@ -98,6 +82,16 @@
             </objects>
             <point key="canvasLocation" x="-345.60000000000002" y="-639.58020989505258"/>
         </scene>
+        <!--User-->
+        <scene sceneID="yEu-DX-0fu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="User" id="mbC-Ed-YIU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="RgF-To-uuN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XmV-AZ-1HR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345.60000000000002" y="25.187406296851577"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon-admin-off" width="32" height="32"/>
@@ -105,7 +99,5 @@
         <image name="icon-sales-off" width="22" height="30"/>
         <image name="icon-sales-on" width="22" height="30"/>
         <image name="icon-scan" width="28" height="26"/>
-        <image name="icon-user-off" width="28" height="28"/>
-        <image name="icon-user-on" width="28" height="28"/>
     </resources>
 </document>
