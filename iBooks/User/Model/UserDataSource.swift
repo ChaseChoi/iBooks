@@ -33,4 +33,8 @@ class UserDataSource {
         let user5 = User(uid: "341224", name: "John", vip: "2", phone: "124214124", amount: "244.0")
         userList.append(user5)
     }
+    
+    func add(user: User) {
+        userList.append(user)
+    }
 }

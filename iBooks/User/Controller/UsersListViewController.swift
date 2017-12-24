@@ -11,6 +11,7 @@ import UIKit
 class UsersListViewController: UIViewController {
     let reuseIdentifier = "userThumbnail"
     let dataSource = UserDataSource()
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,11 @@ class UsersListViewController: UIViewController {
     @IBAction func unwindAddUserCancel(with segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
+    
 
 }
 
-extension UsersListViewController: UITableViewDataSource, UITableViewDelegate{
+extension UsersListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.getNumOfUsers()
     }
@@ -48,10 +50,22 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
     }
+    
+
 }
 
 extension UsersListViewController: AddUserViewControllerDelegate {
     func addUserViewController(_ controller: AddUserViewController, didFinishAdding item: User) {
-        
+        let nextRowIndex = dataSource.getNumOfUsers()
+
+        // update data source
+        dataSource.add(user: item)
+
+        // update table view
+        let indexPath = IndexPath(row: nextRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        dismiss(animated: true, completion: nil)
     }
 }
+
