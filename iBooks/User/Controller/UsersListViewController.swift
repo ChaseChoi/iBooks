@@ -17,7 +17,17 @@ class UsersListViewController: UIViewController {
 
         // test
         dataSource.fetch()
-        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.addUser.rawValue {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! AddUserViewController
+            controller.delegate = self
+        }
+    }
+    
+    @IBAction func unwindAddUserCancel(with segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
     }
 
 }
@@ -37,5 +47,11 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
+    }
+}
+
+extension UsersListViewController: AddUserViewControllerDelegate {
+    func addUserViewController(_ controller: AddUserViewController, didFinishAdding item: User) {
+        
     }
 }

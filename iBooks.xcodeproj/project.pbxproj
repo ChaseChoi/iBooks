@@ -16,6 +16,8 @@
 		16FAA3C81FEF926F00696292 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3C71FEF926F00696292 /* User.swift */; };
 		16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3C91FEF933C00696292 /* UsersListViewController.swift */; };
 		16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3CB1FEF94E100696292 /* UserDataSource.swift */; };
+		16FAA3CE1FEF9FBE00696292 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3CD1FEF9FBE00696292 /* AddUserViewController.swift */; };
+		16FAA3D11FEFA47300696292 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D01FEFA47300696292 /* Segue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		16FAA3C71FEF926F00696292 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		16FAA3C91FEF933C00696292 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		16FAA3CB1FEF94E100696292 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		16FAA3CD1FEF9FBE00696292 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		16FAA3D01FEFA47300696292 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		16FAA3A81FEF894A00696292 /* iBooks */ = {
 			isa = PBXGroup;
 			children = (
+				16FAA3CF1FEFA46700696292 /* Main */,
 				16FAA3BE1FEF8B4600696292 /* Storyboard */,
 				16FAA3BD1FEF8B3C00696292 /* Admin */,
 				16FAA3BC1FEF8B3400696292 /* Sales */,
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				16FAA3C91FEF933C00696292 /* UsersListViewController.swift */,
+				16FAA3CD1FEF9FBE00696292 /* AddUserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -130,6 +136,14 @@
 				16FAA3CB1FEF94E100696292 /* UserDataSource.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		16FAA3CF1FEFA46700696292 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				16FAA3D01FEFA47300696292 /* Segue.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16FAA3C31FEF8FE100696292 /* UserCell.swift in Sources */,
+				16FAA3CE1FEF9FBE00696292 /* AddUserViewController.swift in Sources */,
 				16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
 				16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */,
+				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
