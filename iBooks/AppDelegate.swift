@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupDefaultColor()
         return true
     }
 
@@ -40,7 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    func setupDefaultColor() {
+        UITabBar.appearance().tintColor = UIColor(red:0.26, green:0.74, blue:0.34, alpha:1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red:0.26, green:0.74, blue:0.34, alpha:1.0)
+        
+        UITabBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().isTranslucent = false
+    }
 }
 

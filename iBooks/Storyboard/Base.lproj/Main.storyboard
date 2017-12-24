@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HMb-Y9-Woi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--用户-->
+        <scene sceneID="vpD-iO-VFb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="wLw-Qm-X5u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xFd-wp-mqM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tLB-V6-e2L"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="用户" image="icon-user-off" selectedImage="icon-user-on" id="DJg-z3-9q8"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wtd-b0-LLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-345" y="26"/>
+        </scene>
+        <!--管理-->
+        <scene sceneID="R2F-qe-uF0">
+            <objects>
+                <viewController id="X8g-cq-dmq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kSp-xl-8lV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="W0E-cq-E8p"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="管理" image="icon-admin-off" selectedImage="icon-admin-on" id="xFt-61-oeS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3oX-jm-F9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="851"/>
+        </scene>
+        <!--销售-->
+        <scene sceneID="qXv-94-3Rq">
+            <objects>
+                <viewController id="lGB-a4-ieT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ngy-qe-giM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="G3h-1H-M4b"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="销售" id="Nbl-yz-w2g">
+                        <barButtonItem key="rightBarButtonItem" image="icon-scan" id="793-aV-aIe"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcB-CP-nhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="-640"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="V2f-pW-SPM">
+            <objects>
+                <tabBarController id="HMb-Y9-Woi" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="abM-vk-EZF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="LSY-EL-Dgb" kind="relationship" relationship="viewControllers" id="Xbx-rY-TBC"/>
+                        <segue destination="wLw-Qm-X5u" kind="relationship" relationship="viewControllers" id="TbL-v5-yQP"/>
+                        <segue destination="X8g-cq-dmq" kind="relationship" relationship="viewControllers" id="trK-nu-WgN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oa-ZJ-naf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1299" y="-305"/>
+        </scene>
+        <!--销售-->
+        <scene sceneID="144-hI-FCe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSY-EL-Dgb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="销售" image="icon-sales-off" selectedImage="icon-sales-on" id="LZD-gw-fQc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sb8-P2-bnY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lGB-a4-ieT" kind="relationship" relationship="rootViewController" id="wgg-PM-6SW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPL-qb-TbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345.60000000000002" y="-639.58020989505258"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-admin-off" width="32" height="32"/>
+        <image name="icon-admin-on" width="32" height="32"/>
+        <image name="icon-sales-off" width="22" height="30"/>
+        <image name="icon-sales-on" width="22" height="30"/>
+        <image name="icon-scan" width="28" height="26"/>
+        <image name="icon-user-off" width="28" height="28"/>
+        <image name="icon-user-on" width="28" height="28"/>
+    </resources>
 </document>
