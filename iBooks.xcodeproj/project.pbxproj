@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
-		16FAA3AC1FEF894A00696292 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3AB1FEF894A00696292 /* ViewController.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
 		16FAA3B41FEF894A00696292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B21FEF894A00696292 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16FAA3AB1FEF894A00696292 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16FAA3B01FEF894A00696292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16FAA3B31FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +52,45 @@
 		16FAA3A81FEF894A00696292 /* iBooks */ = {
 			isa = PBXGroup;
 			children = (
+				16FAA3BE1FEF8B4600696292 /* Storyboard */,
+				16FAA3BD1FEF8B3C00696292 /* Admin */,
+				16FAA3BC1FEF8B3400696292 /* Sales */,
+				16FAA3BB1FEF8B1C00696292 /* User */,
 				16FAA3A91FEF894A00696292 /* AppDelegate.swift */,
-				16FAA3AB1FEF894A00696292 /* ViewController.swift */,
-				16FAA3AD1FEF894A00696292 /* Main.storyboard */,
 				16FAA3B01FEF894A00696292 /* Assets.xcassets */,
 				16FAA3B21FEF894A00696292 /* LaunchScreen.storyboard */,
 				16FAA3B51FEF894A00696292 /* Info.plist */,
 			);
 			path = iBooks;
+			sourceTree = "<group>";
+		};
+		16FAA3BB1FEF8B1C00696292 /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		16FAA3BC1FEF8B3400696292 /* Sales */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sales;
+			sourceTree = "<group>";
+		};
+		16FAA3BD1FEF8B3C00696292 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		16FAA3BE1FEF8B4600696292 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				16FAA3AD1FEF894A00696292 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +165,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16FAA3AC1FEF894A00696292 /* ViewController.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,11 +305,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9875RFG2Y;
 				INFOPLIST_FILE = iBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ChaseStudio.iBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,11 +321,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9875RFG2Y;
 				INFOPLIST_FILE = iBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ChaseStudio.iBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
