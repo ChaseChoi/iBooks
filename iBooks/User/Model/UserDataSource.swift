@@ -37,4 +37,7 @@ class UserDataSource {
     func add(user: User) {
         userList.append(user)
     }
+    func deleteUser(at index: IndexPath) {
+        userList.remove(at: index.row)
+    }
 }
