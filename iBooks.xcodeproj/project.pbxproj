@@ -18,6 +18,9 @@
 		16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3CB1FEF94E100696292 /* UserDataSource.swift */; };
 		16FAA3CE1FEF9FBE00696292 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3CD1FEF9FBE00696292 /* AddUserViewController.swift */; };
 		16FAA3D11FEFA47300696292 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D01FEFA47300696292 /* Segue.swift */; };
+		16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D31FEFCD2200696292 /* ScanViewController.swift */; };
+		16FAA3D71FEFD02400696292 /* Sales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3D51FEFD02400696292 /* Sales.storyboard */; };
+		16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D81FEFD40C00696292 /* SalesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		16FAA3CB1FEF94E100696292 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
 		16FAA3CD1FEF9FBE00696292 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		16FAA3D01FEFA47300696292 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
+		16FAA3D31FEFCD2200696292 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		16FAA3D61FEFD02400696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/Base.lproj/Sales.storyboard; sourceTree = "<group>"; };
+		16FAA3D81FEFD40C00696292 /* SalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		16FAA3BC1FEF8B3400696292 /* Sales */ = {
 			isa = PBXGroup;
 			children = (
+				16FAA3D21FEFCD0200696292 /* Controller */,
 			);
 			path = Sales;
 			sourceTree = "<group>";
@@ -107,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				16FAA3C41FEF8FFD00696292 /* User.storyboard */,
+				16FAA3D51FEFD02400696292 /* Sales.storyboard */,
 				16FAA3AD1FEF894A00696292 /* Main.storyboard */,
 			);
 			path = Storyboard;
@@ -144,6 +152,15 @@
 				16FAA3D01FEFA47300696292 /* Segue.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		16FAA3D21FEFCD0200696292 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16FAA3D31FEFCD2200696292 /* ScanViewController.swift */,
+				16FAA3D81FEFD40C00696292 /* SalesViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +226,7 @@
 				16FAA3C61FEF8FFD00696292 /* User.storyboard in Resources */,
 				16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */,
 				16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */,
+				16FAA3D71FEFD02400696292 /* Sales.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,12 +238,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				16FAA3C31FEF8FE100696292 /* UserCell.swift in Sources */,
+				16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */,
 				16FAA3CE1FEF9FBE00696292 /* AddUserViewController.swift in Sources */,
 				16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
 				16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */,
 				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,
+				16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +274,14 @@
 				16FAA3C51FEF8FFD00696292 /* Base */,
 			);
 			name = User.storyboard;
+			sourceTree = "<group>";
+		};
+		16FAA3D51FEFD02400696292 /* Sales.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16FAA3D61FEFD02400696292 /* Base */,
+			);
+			name = Sales.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

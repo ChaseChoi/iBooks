@@ -26,24 +26,6 @@
             </objects>
             <point key="canvasLocation" x="-306" y="851"/>
         </scene>
-        <!--销售-->
-        <scene sceneID="qXv-94-3Rq">
-            <objects>
-                <viewController id="lGB-a4-ieT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ngy-qe-giM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="G3h-1H-M4b"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="销售" id="Nbl-yz-w2g">
-                        <barButtonItem key="rightBarButtonItem" image="icon-scan" id="793-aV-aIe"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bcB-CP-nhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="610" y="-640"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="V2f-pW-SPM">
             <objects>
@@ -54,7 +36,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="LSY-EL-Dgb" kind="relationship" relationship="viewControllers" id="Xbx-rY-TBC"/>
+                        <segue destination="iDa-yT-jGM" kind="relationship" relationship="viewControllers" id="Xbx-rY-TBC"/>
                         <segue destination="mbC-Ed-YIU" kind="relationship" relationship="viewControllers" id="TbL-v5-yQP"/>
                         <segue destination="X8g-cq-dmq" kind="relationship" relationship="viewControllers" id="trK-nu-WgN"/>
                     </connections>
@@ -62,25 +44,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oa-ZJ-naf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1299" y="-305"/>
-        </scene>
-        <!--销售-->
-        <scene sceneID="144-hI-FCe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSY-EL-Dgb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="销售" image="icon-sales-off" selectedImage="icon-sales-on" id="LZD-gw-fQc"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sb8-P2-bnY">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lGB-a4-ieT" kind="relationship" relationship="rootViewController" id="wgg-PM-6SW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GPL-qb-TbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-345.60000000000002" y="-639.58020989505258"/>
         </scene>
         <!--User-->
         <scene sceneID="yEu-DX-0fu">
@@ -92,12 +55,19 @@
             </objects>
             <point key="canvasLocation" x="-345.60000000000002" y="25.187406296851577"/>
         </scene>
+        <!--Sales-->
+        <scene sceneID="lSb-Jh-eaT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Sales" id="iDa-yT-jGM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="v2U-Id-MN9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8sT-Oz-ZxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345.60000000000002" y="-639.58020989505258"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon-admin-off" width="32" height="32"/>
         <image name="icon-admin-on" width="32" height="32"/>
-        <image name="icon-sales-off" width="22" height="30"/>
-        <image name="icon-sales-on" width="22" height="30"/>
-        <image name="icon-scan" width="28" height="26"/>
     </resources>
 </document>
