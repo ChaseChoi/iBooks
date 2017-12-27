@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1623F02A1FF38F92006224D9 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1623F0281FF38F92006224D9 /* Admin.storyboard */; };
 		1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623F02B1FF3937B006224D9 /* InputTextField.swift */; };
+		16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		1623F0291FF38F92006224D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/Base.lproj/Admin.storyboard; sourceTree = "<group>"; };
 		1623F02B1FF3937B006224D9 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16CA5CEA1FF39E4400784A2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1623F02B1FF3937B006224D9 /* InputTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16CA5CEB1FF39E5200784A2A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		16FAA39D1FEF894A00696292 = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +134,8 @@
 		16FAA3BD1FEF8B3C00696292 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
-				1623F02B1FF3937B006224D9 /* InputTextField.swift */,
+				16CA5CEB1FF39E5200784A2A /* Controller */,
+				16CA5CEA1FF39E4400784A2A /* View */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -274,6 +293,7 @@
 				16FAA3DC1FEFE05900696292 /* googleDataSource.swift in Sources */,
 				16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
+				16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */,
 				16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */,
 				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,
