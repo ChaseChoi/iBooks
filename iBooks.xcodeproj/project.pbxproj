@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1623F02A1FF38F92006224D9 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1623F0281FF38F92006224D9 /* Admin.storyboard */; };
+		1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623F02B1FF3937B006224D9 /* InputTextField.swift */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
@@ -21,9 +23,13 @@
 		16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D31FEFCD2200696292 /* ScanViewController.swift */; };
 		16FAA3D71FEFD02400696292 /* Sales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3D51FEFD02400696292 /* Sales.storyboard */; };
 		16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D81FEFD40C00696292 /* SalesViewController.swift */; };
+		16FAA3DC1FEFE05900696292 /* googleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3DB1FEFE05900696292 /* googleDataSource.swift */; };
+		16FAA3DE1FEFE11C00696292 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3DD1FEFE11C00696292 /* Books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1623F0291FF38F92006224D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/Base.lproj/Admin.storyboard; sourceTree = "<group>"; };
+		1623F02B1FF3937B006224D9 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +46,8 @@
 		16FAA3D31FEFCD2200696292 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		16FAA3D61FEFD02400696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/Base.lproj/Sales.storyboard; sourceTree = "<group>"; };
 		16FAA3D81FEFD40C00696292 /* SalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
+		16FAA3DB1FEFE05900696292 /* googleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleDataSource.swift; sourceTree = "<group>"; };
+		16FAA3DD1FEFE11C00696292 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 		16FAA3A81FEF894A00696292 /* iBooks */ = {
 			isa = PBXGroup;
 			children = (
+				16FAA3DA1FEFE03000696292 /* API */,
 				16FAA3CF1FEFA46700696292 /* Main */,
 				16FAA3BE1FEF8B4600696292 /* Storyboard */,
 				16FAA3BD1FEF8B3C00696292 /* Admin */,
@@ -98,6 +107,7 @@
 		16FAA3BC1FEF8B3400696292 /* Sales */ = {
 			isa = PBXGroup;
 			children = (
+				16FAA3DF1FEFE11F00696292 /* Model */,
 				16FAA3D21FEFCD0200696292 /* Controller */,
 			);
 			path = Sales;
@@ -106,6 +116,7 @@
 		16FAA3BD1FEF8B3C00696292 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				1623F02B1FF3937B006224D9 /* InputTextField.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -113,6 +124,7 @@
 		16FAA3BE1FEF8B4600696292 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				1623F0281FF38F92006224D9 /* Admin.storyboard */,
 				16FAA3C41FEF8FFD00696292 /* User.storyboard */,
 				16FAA3D51FEFD02400696292 /* Sales.storyboard */,
 				16FAA3AD1FEF894A00696292 /* Main.storyboard */,
@@ -161,6 +173,22 @@
 				16FAA3D81FEFD40C00696292 /* SalesViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		16FAA3DA1FEFE03000696292 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				16FAA3DB1FEFE05900696292 /* googleDataSource.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		16FAA3DF1FEFE11F00696292 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16FAA3DD1FEFE11C00696292 /* Books.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +254,7 @@
 				16FAA3C61FEF8FFD00696292 /* User.storyboard in Resources */,
 				16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */,
 				16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */,
+				1623F02A1FF38F92006224D9 /* Admin.storyboard in Resources */,
 				16FAA3D71FEFD02400696292 /* Sales.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +269,9 @@
 				16FAA3C31FEF8FE100696292 /* UserCell.swift in Sources */,
 				16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */,
 				16FAA3CE1FEF9FBE00696292 /* AddUserViewController.swift in Sources */,
+				16FAA3DE1FEFE11C00696292 /* Books.swift in Sources */,
+				1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */,
+				16FAA3DC1FEFE05900696292 /* googleDataSource.swift in Sources */,
 				16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
 				16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */,
@@ -252,6 +284,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1623F0281FF38F92006224D9 /* Admin.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1623F0291FF38F92006224D9 /* Base */,
+			);
+			name = Admin.storyboard;
+			sourceTree = "<group>";
+		};
 		16FAA3AD1FEF894A00696292 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

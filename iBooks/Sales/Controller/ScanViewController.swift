@@ -20,6 +20,11 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //test
+        let sampleIsbn = "9781451648539"
+        finishScanning(isbn: sampleIsbn)
+        
+        
         
         // setup session
         let captureSession = AVCaptureSession()

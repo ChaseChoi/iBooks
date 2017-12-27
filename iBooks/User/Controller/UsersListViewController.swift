@@ -8,15 +8,19 @@
 
 import UIKit
 
+struct TableViewReuseIdentifier {
+    static let userListCell = "userThumbnail"
+}
+
 class UsersListViewController: UIViewController {
-    let reuseIdentifier = "userThumbnail"
+    
     let dataSource = UserDataSource()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // test
+        
         dataSource.fetch()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,9 +47,11 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! UserCell
-        cell.userItem = dataSource.getUser(at: indexPath) 
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewReuseIdentifier.userListCell, for: indexPath) as! UserCell
+        cell.userItem = dataSource.getUser(at: indexPath)
         return cell
+        
     }
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
@@ -57,6 +63,7 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate {
         //update table view
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+        
     }
     // change the title of delete confirmation button
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {

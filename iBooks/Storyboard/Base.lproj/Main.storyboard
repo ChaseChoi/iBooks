@@ -6,26 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--管理-->
-        <scene sceneID="R2F-qe-uF0">
-            <objects>
-                <viewController id="X8g-cq-dmq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kSp-xl-8lV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="W0E-cq-E8p"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="管理" image="icon-admin-off" selectedImage="icon-admin-on" id="xFt-61-oeS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3oX-jm-F9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-306" y="851"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="V2f-pW-SPM">
             <objects>
@@ -38,7 +21,7 @@
                     <connections>
                         <segue destination="iDa-yT-jGM" kind="relationship" relationship="viewControllers" id="Xbx-rY-TBC"/>
                         <segue destination="mbC-Ed-YIU" kind="relationship" relationship="viewControllers" id="TbL-v5-yQP"/>
-                        <segue destination="X8g-cq-dmq" kind="relationship" relationship="viewControllers" id="trK-nu-WgN"/>
+                        <segue destination="YdH-Ix-LbI" kind="relationship" relationship="viewControllers" id="trK-nu-WgN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oa-ZJ-naf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,9 +48,15 @@
             </objects>
             <point key="canvasLocation" x="-345.60000000000002" y="-639.58020989505258"/>
         </scene>
+        <!--Admin-->
+        <scene sceneID="Fqf-tP-9cc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Admin" id="YdH-Ix-LbI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="SiS-33-uED"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nm0-95-aOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="851"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="icon-admin-off" width="32" height="32"/>
-        <image name="icon-admin-on" width="32" height="32"/>
-    </resources>
 </document>
