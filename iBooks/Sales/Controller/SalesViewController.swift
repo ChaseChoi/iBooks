@@ -14,8 +14,7 @@ class SalesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.salesScanner.rawValue {
@@ -31,12 +30,10 @@ class SalesViewController: UIViewController {
 
 extension SalesViewController: ScanViewControllerDelegate {
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
-        print("OK: \(isbn)")
-        let bookInfo = googleDataSource.loadJSON(isbn: isbn)
+        print("Get ISBN: \(isbn)")
         
-        for item in bookInfo {
-            bookList.append(Book(dict: item, isbn: isbn))
-        }
+        APIDataSource.loadJSON(isbn: isbn)
+        // add books to data source
         
         dismiss(animated: true, completion: nil)
     }

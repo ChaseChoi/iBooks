@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1623F02A1FF38F92006224D9 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1623F0281FF38F92006224D9 /* Admin.storyboard */; };
 		1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623F02B1FF3937B006224D9 /* InputTextField.swift */; };
+		16BF80232000BE9D0027E300 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF80222000BE9D0027E300 /* APIData.swift */; };
+		16BF80252000E8710027E300 /* APIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF80242000E8710027E300 /* APIDataSource.swift */; };
 		16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
@@ -24,13 +26,14 @@
 		16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D31FEFCD2200696292 /* ScanViewController.swift */; };
 		16FAA3D71FEFD02400696292 /* Sales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3D51FEFD02400696292 /* Sales.storyboard */; };
 		16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D81FEFD40C00696292 /* SalesViewController.swift */; };
-		16FAA3DC1FEFE05900696292 /* googleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3DB1FEFE05900696292 /* googleDataSource.swift */; };
 		16FAA3DE1FEFE11C00696292 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3DD1FEFE11C00696292 /* Books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1623F0291FF38F92006224D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/Base.lproj/Admin.storyboard; sourceTree = "<group>"; };
 		1623F02B1FF3937B006224D9 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		16BF80222000BE9D0027E300 /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
+		16BF80242000E8710027E300 /* APIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataSource.swift; sourceTree = "<group>"; };
 		16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +51,6 @@
 		16FAA3D31FEFCD2200696292 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		16FAA3D61FEFD02400696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/Base.lproj/Sales.storyboard; sourceTree = "<group>"; };
 		16FAA3D81FEFD40C00696292 /* SalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
-		16FAA3DB1FEFE05900696292 /* googleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleDataSource.swift; sourceTree = "<group>"; };
 		16FAA3DD1FEFE11C00696292 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,7 +199,8 @@
 		16FAA3DA1FEFE03000696292 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				16FAA3DB1FEFE05900696292 /* googleDataSource.swift */,
+				16BF80222000BE9D0027E300 /* APIData.swift */,
+				16BF80242000E8710027E300 /* APIDataSource.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -290,14 +293,15 @@
 				16FAA3CE1FEF9FBE00696292 /* AddUserViewController.swift in Sources */,
 				16FAA3DE1FEFE11C00696292 /* Books.swift in Sources */,
 				1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */,
-				16FAA3DC1FEFE05900696292 /* googleDataSource.swift in Sources */,
 				16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
+				16BF80232000BE9D0027E300 /* APIData.swift in Sources */,
 				16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */,
 				16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */,
 				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,
 				16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */,
+				16BF80252000E8710027E300 /* APIDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

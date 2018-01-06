@@ -42,8 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     func setupDefaultColor() {
-        UITabBar.appearance().tintColor = UIColor(red:0.26, green:0.74, blue:0.34, alpha:1.0)
-        UINavigationBar.appearance().tintColor = UIColor(red:0.26, green:0.74, blue:0.34, alpha:1.0)
+        UITabBar.appearance().tintColor = UIColor(red:0.17, green:0.63, blue:0.79, alpha:1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red:0.17, green:0.63, blue:0.79, alpha:1.0)
         
         UITabBar.appearance().isTranslucent = false
         UINavigationBar.appearance().isTranslucent = false
