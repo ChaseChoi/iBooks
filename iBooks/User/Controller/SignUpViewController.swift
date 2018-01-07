@@ -22,7 +22,9 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpAddTargetIsNotEmptyTextFields()
         idTextfield.becomeFirstResponder()
+        
     }
     
     @IBAction func confirm() {
@@ -31,6 +33,28 @@ class SignUpViewController: UIViewController {
         let phone = phoneTextfield.text!
         let user = User(uid: id, name: name, phone: phone)
         delegate?.signUpViewController(self, didFinishSigningUp: user)
+    }
+    
+    // prevent all the textfields from being empty
+    func setUpAddTargetIsNotEmptyTextFields() {
+        signUpButton.isEnabled = false
+        
+        idTextfield.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        phoneTextfield.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        userNameTextfield.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+    }
+    
+    @objc func textFieldsIsNotEmpty(sender: InputTextField) {
+        sender.text = sender.text?.trimmingCharacters(in: .whitespaces)
+        
+        guard
+            let id = idTextfield.text, !id.isEmpty,
+            let phone = phoneTextfield.text, !phone.isEmpty,
+            let name = userNameTextfield.text, !name.isEmpty else {
+                signUpButton.isEnabled = false
+                return
+        }
+        signUpButton.isEnabled = true
     }
 
 }
@@ -52,14 +76,6 @@ extension SignUpViewController: UITextFieldDelegate {
         }
         // Do not add a line break
         return false
-    }
-    // avoid id textfield from inputing nothing
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let oldText = textField.text! as NSString
-        let newText = oldText.replacingCharacters(in: range, with: string) as NSString
-        
-        signUpButton.isEnabled = (newText.length > 0)
-        return true
     }
     
 }

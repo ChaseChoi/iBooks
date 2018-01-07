@@ -20,7 +20,9 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     @IBOutlet weak var tipLabel: UILabel!
     
     var videoPreviewLayer = AVCaptureVideoPreviewLayer()
-
+    // setup session
+    let captureSession = AVCaptureSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        //test
@@ -28,10 +30,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 //        let sampleIsbn = "978121246678"
 //        finishScanning(isbn: sampleIsbn)
         
-        
-        
-        // setup session
-        let captureSession = AVCaptureSession()
         guard let captureDevice = AVCaptureDevice.default(for: .video) else {
             warning(title: "相机识别失败", message: "请使用带有相机的设备", titleForAction: "好")
             return
@@ -65,6 +63,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         if metadataObjects.count != 0 {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
                 if object.type == .ean13 {
+                    captureSession.stopRunning()
                     finishScanning(isbn: object.stringValue!)
                 }
             }

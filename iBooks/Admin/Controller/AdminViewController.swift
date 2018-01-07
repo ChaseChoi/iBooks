@@ -9,6 +9,8 @@
 import UIKit
 
 class AdminViewController: UIViewController {
+    // test
+    @IBOutlet weak var testButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,9 @@ class AdminViewController: UIViewController {
     @IBAction func unwindLoginCancel(with segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func test() {
+        performSegue(withIdentifier: Segue.adminLogin.rawValue, sender: self)
+    }
 }
 

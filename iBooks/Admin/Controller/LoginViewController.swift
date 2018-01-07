@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpAddTargetIsNotEmptyTextFields()
         userInput.becomeFirstResponder()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,9 +25,28 @@ class LoginViewController: UIViewController {
     }
     @IBAction func confirm() {
         
-        self.performSegue(withIdentifier: Segue.adminLogin.rawValue, sender: self)
-        dismiss(animated: true, completion: nil)
     }
+    func setUpAddTargetIsNotEmptyTextFields() {
+        confirmButton.isEnabled = false
+        
+        userInput.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        passwordInput.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        
+    }
+    
+    @objc func textFieldsIsNotEmpty(sender: InputTextField) {
+        sender.text = sender.text?.trimmingCharacters(in: .whitespaces)
+        
+        guard
+            let username = userInput.text, !username.isEmpty,
+            let password = passwordInput.text, !password.isEmpty else {
+                confirmButton.isEnabled = false
+                return
+        }
+        confirmButton.isEnabled = true
+    }
+
+    
 }
 
 extension LoginViewController: UITextFieldDelegate {
