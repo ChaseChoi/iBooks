@@ -20,10 +20,10 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //test
-//        let sampleIsbn = "9781451648539"
-        let sampleIsbn = "978121246678"
-        finishScanning(isbn: sampleIsbn)
+//        //test
+////        let sampleIsbn = "9781451648539"
+//        let sampleIsbn = "978121246678"
+//        finishScanning(isbn: sampleIsbn)
         
         
         

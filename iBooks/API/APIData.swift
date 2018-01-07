@@ -15,6 +15,43 @@ struct APIData: Codable {
 
 struct BookInfo: Codable {
     let volumeInfo: VolumeInfo
+    
+    func getTitle() -> String {
+        return volumeInfo.title
+    }
+    func getPublisher() -> String? {
+        if let publisher = volumeInfo.publisher {
+            return publisher
+        }
+        return nil
+    }
+    func getAuthors() -> String? {
+        if let authors = volumeInfo.authors {
+            let authorList = authors.joined(separator: ", ")
+            return authorList
+        }
+        return nil
+    }
+    func getISBN_13() -> String {
+        if volumeInfo.industryIdentifiers[0].type == "ISBN_13" {
+            return volumeInfo.industryIdentifiers[0].identifier
+        } else {
+            return volumeInfo.industryIdentifiers[1].identifier
+        }
+    }
+    func getImageUrl() -> URL? {
+        if let url = volumeInfo.imageLinks?.thumbnail {
+            return url
+        }
+        return nil
+    }
+    func getCategories() -> String? {
+        if let categoryArray = volumeInfo.categories {
+            let categories = categoryArray.joined(separator: ", ")
+            return categories
+        }
+        return nil
+    }
 }
 struct VolumeInfo: Codable {
     let title: String

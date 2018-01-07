@@ -10,7 +10,7 @@ import UIKit
 
 class SalesViewController: UIViewController {
     
-    var bookList: [Book] = []
+    var bookItem: Book?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,9 @@ extension SalesViewController: ScanViewControllerDelegate {
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
         print("Get ISBN: \(isbn)")
         
-        APIDataSource.loadJSON(isbn: isbn)
-        // add books to data source
-        
+        APIDataSource.loadJSON(isbn: isbn) { (result: Book?) in
+            self.bookItem = result
+        }
         dismiss(animated: true, completion: nil)
     }
 }

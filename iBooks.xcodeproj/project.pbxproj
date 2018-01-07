@@ -12,6 +12,7 @@
 		16BF80232000BE9D0027E300 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF80222000BE9D0027E300 /* APIData.swift */; };
 		16BF80252000E8710027E300 /* APIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF80242000E8710027E300 /* APIDataSource.swift */; };
 		16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */; };
+		16CB060D2001081A00876539 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB060C2001081A00876539 /* Book.swift */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
@@ -26,7 +27,6 @@
 		16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D31FEFCD2200696292 /* ScanViewController.swift */; };
 		16FAA3D71FEFD02400696292 /* Sales.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3D51FEFD02400696292 /* Sales.storyboard */; };
 		16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3D81FEFD40C00696292 /* SalesViewController.swift */; };
-		16FAA3DE1FEFE11C00696292 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3DD1FEFE11C00696292 /* Books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +35,7 @@
 		16BF80222000BE9D0027E300 /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
 		16BF80242000E8710027E300 /* APIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataSource.swift; sourceTree = "<group>"; };
 		16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		16CB060C2001081A00876539 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		16FAA3D31FEFCD2200696292 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		16FAA3D61FEFD02400696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/Base.lproj/Sales.storyboard; sourceTree = "<group>"; };
 		16FAA3D81FEFD40C00696292 /* SalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewController.swift; sourceTree = "<group>"; };
-		16FAA3DD1FEFE11C00696292 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				16FAA3D01FEFA47300696292 /* Segue.swift */,
+				16CB060C2001081A00876539 /* Book.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -208,7 +209,6 @@
 		16FAA3DF1FEFE11F00696292 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				16FAA3DD1FEFE11C00696292 /* Books.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,8 +290,8 @@
 			files = (
 				16FAA3C31FEF8FE100696292 /* UserCell.swift in Sources */,
 				16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */,
+				16CB060D2001081A00876539 /* Book.swift in Sources */,
 				16FAA3CE1FEF9FBE00696292 /* AddUserViewController.swift in Sources */,
-				16FAA3DE1FEFE11C00696292 /* Books.swift in Sources */,
 				1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */,
 				16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
