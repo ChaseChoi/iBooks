@@ -16,8 +16,11 @@ protocol ScanViewControllerDelegate: class {
 class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     weak var delegate: ScanViewControllerDelegate?
     @IBOutlet weak var scanGridView: UIImageView!
-    var videoPreviewLayer = AVCaptureVideoPreviewLayer()
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var tipLabel: UILabel!
     
+    var videoPreviewLayer = AVCaptureVideoPreviewLayer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 //        //test
@@ -51,8 +54,13 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         videoPreviewLayer.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer)
         view.bringSubview(toFront: scanGridView)
+        view.bringSubview(toFront: closeButton)
+        view.bringSubview(toFront: tipLabel)
         captureSession.startRunning()
     }
+    
+
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.count != 0 {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {

@@ -16,8 +16,6 @@ class AdminViewController: UIViewController {
     }
     
     @IBAction func unwindLoginCancel(segue: UIStoryboardSegue) {}
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
+
 }
 

@@ -10,5 +10,5 @@ import Foundation
 
 enum Segue: String {
     case addUser
-    case salesScanner
+    case scannerView
 }

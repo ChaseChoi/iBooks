@@ -19,7 +19,11 @@ class UsersListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //avoid the last cell from cutting off
+        let tabBarHeight = CGFloat(49)
+        edgesForExtendedLayout = UIRectEdge.all
+        tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: tabBarHeight, right: 0.0)
         
         dataSource.fetch()
     }
