@@ -11,4 +11,5 @@ import Foundation
 enum Segue: String {
     case addUser
     case scannerView
+    case signUpUser 
 }

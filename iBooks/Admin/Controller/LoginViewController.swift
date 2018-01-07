@@ -18,9 +18,7 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func confirm() {
-        self.performSegue(withIdentifier: Segue.scannerView.rawValue, sender: self)
-    }
+
 }
 
 extension LoginViewController: UITextFieldDelegate {

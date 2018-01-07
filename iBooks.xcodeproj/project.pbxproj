@@ -14,6 +14,7 @@
 		16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */; };
 		16CB060D2001081A00876539 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB060C2001081A00876539 /* Book.swift */; };
 		16CB060F2001B4A300876539 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB060E2001B4A300876539 /* LoginViewController.swift */; };
+		16CB06112002241600876539 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB06102002241600876539 /* SignUpViewController.swift */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		16CB060C2001081A00876539 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		16CB060E2001B4A300876539 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		16CB06102002241600876539 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				16FAA3C91FEF933C00696292 /* UsersListViewController.swift */,
 				16FAA3CD1FEF9FBE00696292 /* AddUserViewController.swift */,
+				16CB06102002241600876539 /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
 				16BF80232000BE9D0027E300 /* APIData.swift in Sources */,
 				16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */,
+				16CB06112002241600876539 /* SignUpViewController.swift in Sources */,
 				16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */,
 				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,

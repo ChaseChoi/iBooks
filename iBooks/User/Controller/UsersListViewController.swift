@@ -28,9 +28,14 @@ class UsersListViewController: UIViewController {
         dataSource.fetch()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segue.addUser.rawValue {
-            let navigationController = segue.destination as! UINavigationController
-            let controller = navigationController.topViewController as! AddUserViewController
+//        if segue.identifier == Segue.addUser.rawValue {
+//            let navigationController = segue.destination as! UINavigationController
+//            let controller = navigationController.topViewController as! AddUserViewController
+//            controller.delegate = self
+//        }
+        if segue.identifier == Segue.signUpUser.rawValue {
+            let navgatinController = segue.destination as! UINavigationController
+            let controller = navgatinController.topViewController as! SignUpViewController
             controller.delegate = self
         }
     }
@@ -39,7 +44,9 @@ class UsersListViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-
+    @IBAction func unwindSignUpCancel(with segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension UsersListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -75,6 +82,24 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension UsersListViewController: SignUpViewControllerDelegate {
+    
+    func signUpViewController(_ controller: SignUpViewController, didFinishSigningUp user: User) {
+        let nextRowIndex = dataSource.getNumOfUsers()
+        
+        // update data source
+        dataSource.add(user: user)
+        
+        // update table view
+        let indexPath = IndexPath(row: nextRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        dismiss(animated: true, completion: nil)
+    }
+    
+
+    
+}
 extension UsersListViewController: AddUserViewControllerDelegate {
     func addUserViewController(_ controller: AddUserViewController, didFinishAdding item: User) {
         let nextRowIndex = dataSource.getNumOfUsers()
