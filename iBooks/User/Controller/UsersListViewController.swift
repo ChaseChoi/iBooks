@@ -28,21 +28,13 @@ class UsersListViewController: UIViewController {
         dataSource.fetch()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == Segue.addUser.rawValue {
-//            let navigationController = segue.destination as! UINavigationController
-//            let controller = navigationController.topViewController as! AddUserViewController
-//            controller.delegate = self
-//        }
-        if segue.identifier == Segue.signUpUser.rawValue {
-            let navgatinController = segue.destination as! UINavigationController
-            let controller = navgatinController.topViewController as! SignUpViewController
+
+        if segue.identifier == Segue.signUpView.rawValue {
+            let controller = segue.destination as! SignUpViewController
             controller.delegate = self
         }
     }
     
-    @IBAction func unwindAddUserCancel(with segue: UIStoryboardSegue) {
-        dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func unwindSignUpCancel(with segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
@@ -100,18 +92,3 @@ extension UsersListViewController: SignUpViewControllerDelegate {
 
     
 }
-extension UsersListViewController: AddUserViewControllerDelegate {
-    func addUserViewController(_ controller: AddUserViewController, didFinishAdding item: User) {
-        let nextRowIndex = dataSource.getNumOfUsers()
-
-        // update data source
-        dataSource.add(user: item)
-
-        // update table view
-        let indexPath = IndexPath(row: nextRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-        dismiss(animated: true, completion: nil)
-    }
-}
-

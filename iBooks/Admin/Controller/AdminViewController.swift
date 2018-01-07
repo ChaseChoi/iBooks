@@ -15,7 +15,9 @@ class AdminViewController: UIViewController {
 
     }
     
-    @IBAction func unwindLoginCancel(segue: UIStoryboardSegue) {}
+    @IBAction func unwindLoginCancel(with segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 
