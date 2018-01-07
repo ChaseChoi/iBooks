@@ -72,6 +72,19 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "删除"
     }
+    
+    // animate cell
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 1. set up the initial state of the cell
+        cell.alpha = 0
+        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+        cell.layer.transform = transform
+        // 2. use UIView animation method to change init into final state
+        UIView.animate(withDuration: 0.5){
+            cell.alpha = 1.0
+            cell.layer.transform = CATransform3DIdentity
+        }
+    }
 }
 
 extension UsersListViewController: SignUpViewControllerDelegate {

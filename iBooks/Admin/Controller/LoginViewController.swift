@@ -18,7 +18,16 @@ class LoginViewController: UIViewController {
 
         userInput.becomeFirstResponder()
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.adminLogin.rawValue {
+            print("Gotcha")
+        }
+    }
+    @IBAction func confirm() {
+        
+        self.performSegue(withIdentifier: Segue.adminLogin.rawValue, sender: self)
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {

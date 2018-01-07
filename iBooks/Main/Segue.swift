@@ -9,6 +9,9 @@
 import Foundation
 
 enum Segue: String {
-    case scannerView
+    case saleBookScannerView
     case signUpView
+    case addBookScannerView
+    case adminLogin
+    
 }

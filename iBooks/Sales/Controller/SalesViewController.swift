@@ -17,9 +17,8 @@ class SalesViewController: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segue.scannerView.rawValue {
-            let navigationController = segue.destination as! UINavigationController
-            let controller = navigationController.topViewController as! ScanViewController
+        if segue.identifier == Segue.saleBookScannerView.rawValue {
+            let controller = segue.destination as! ScanViewController
             controller.delegate = self
         }
     }

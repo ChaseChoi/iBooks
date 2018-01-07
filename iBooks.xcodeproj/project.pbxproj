@@ -15,6 +15,8 @@
 		16CB060D2001081A00876539 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB060C2001081A00876539 /* Book.swift */; };
 		16CB060F2001B4A300876539 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB060E2001B4A300876539 /* LoginViewController.swift */; };
 		16CB06112002241600876539 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB06102002241600876539 /* SignUpViewController.swift */; };
+		16CB061320023F3600876539 /* AddBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061220023F3600876539 /* AddBooksViewController.swift */; };
+		16CB0616200241A800876539 /* Scanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16CB0614200241A800876539 /* Scanner.storyboard */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		16CB060C2001081A00876539 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		16CB060E2001B4A300876539 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		16CB06102002241600876539 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		16CB061220023F3600876539 /* AddBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBooksViewController.swift; sourceTree = "<group>"; };
+		16CB0615200241A800876539 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/iBooks/Storyboard/Base.lproj/Scanner.storyboard; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			children = (
 				16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */,
 				16CB060E2001B4A300876539 /* LoginViewController.swift */,
+				16CB061220023F3600876539 /* AddBooksViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 		16FAA3BE1FEF8B4600696292 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				16CB0614200241A800876539 /* Scanner.storyboard */,
 				1623F0281FF38F92006224D9 /* Admin.storyboard */,
 				16FAA3C41FEF8FFD00696292 /* User.storyboard */,
 				16FAA3D51FEFD02400696292 /* Sales.storyboard */,
@@ -280,6 +286,7 @@
 				16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */,
 				16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */,
 				1623F02A1FF38F92006224D9 /* Admin.storyboard in Resources */,
+				16CB0616200241A800876539 /* Scanner.storyboard in Resources */,
 				16FAA3D71FEFD02400696292 /* Sales.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +311,7 @@
 				16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */,
 				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,
+				16CB061320023F3600876539 /* AddBooksViewController.swift in Sources */,
 				16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */,
 				16BF80252000E8710027E300 /* APIDataSource.swift in Sources */,
 			);
@@ -318,6 +326,14 @@
 				1623F0291FF38F92006224D9 /* Base */,
 			);
 			name = Admin.storyboard;
+			sourceTree = "<group>";
+		};
+		16CB0614200241A800876539 /* Scanner.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16CB0615200241A800876539 /* Base */,
+			);
+			name = Scanner.storyboard;
 			sourceTree = "<group>";
 		};
 		16FAA3AD1FEF894A00696292 /* Main.storyboard */ = {

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LSY-EL-Dgb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--销售-->
+        <scene sceneID="qXv-94-3Rq">
+            <objects>
+                <viewController id="lGB-a4-ieT" customClass="SalesViewController" customModule="iBooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ngy-qe-giM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="G3h-1H-M4b"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="销售" id="Nbl-yz-w2g">
+                        <barButtonItem key="rightBarButtonItem" image="icon-scan" id="793-aV-aIe">
+                            <connections>
+                                <segue destination="YtB-cY-9QY" kind="presentation" identifier="saleBookScannerView" id="z38-6k-BXe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcB-CP-nhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="-640"/>
+        </scene>
+        <!--销售-->
+        <scene sceneID="144-hI-FCe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSY-EL-Dgb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="销售" image="icon-sales-off" selectedImage="icon-sales-on" id="LZD-gw-fQc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sb8-P2-bnY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lGB-a4-ieT" kind="relationship" relationship="rootViewController" id="wgg-PM-6SW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPL-qb-TbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345.60000000000002" y="-639.58020989505258"/>
+        </scene>
+        <!--Scanner-->
+        <scene sceneID="Gj3-gN-jen">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Scanner" id="YtB-cY-9QY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSQ-fd-Nje" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677.5999999999999" y="-640.02998500749629"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-sales-off" width="22" height="30"/>
+        <image name="icon-sales-on" width="22" height="30"/>
+        <image name="icon-scan" width="28" height="26"/>
+    </resources>
+</document>
