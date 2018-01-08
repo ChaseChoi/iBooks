@@ -12,10 +12,10 @@ struct Book {
     var isbn: String
     var imageURL: URL?
     var title: String
-    var authors = "无"
+    var authors = "未知"
     var price = 0.0
-    var categories = "无"
-    var publisher = "无"
+    var categories = "未知"
+    var publisher = "未知"
     var number = 0
 }
 

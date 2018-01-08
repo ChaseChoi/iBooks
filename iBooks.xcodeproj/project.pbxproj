@@ -18,6 +18,9 @@
 		16CB061320023F3600876539 /* AddBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061220023F3600876539 /* AddBooksViewController.swift */; };
 		16CB0616200241A800876539 /* Scanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16CB0614200241A800876539 /* Scanner.storyboard */; };
 		16CB06182002F96F00876539 /* SuperUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB06172002F96F00876539 /* SuperUserViewController.swift */; };
+		16CB061A20031CA700876539 /* UIImageViewDownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061920031CA700876539 /* UIImageViewDownloadImage.swift */; };
+		16CB061E2003573C00876539 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061D2003573C00876539 /* HUDView.swift */; };
+		16CB0620200365C500876539 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061F200365C500876539 /* Functions.swift */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
@@ -45,6 +48,9 @@
 		16CB061220023F3600876539 /* AddBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBooksViewController.swift; sourceTree = "<group>"; };
 		16CB0615200241A800876539 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/iBooks/Storyboard/Base.lproj/Scanner.storyboard; sourceTree = "<group>"; };
 		16CB06172002F96F00876539 /* SuperUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperUserViewController.swift; sourceTree = "<group>"; };
+		16CB061920031CA700876539 /* UIImageViewDownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewDownloadImage.swift; sourceTree = "<group>"; };
+		16CB061D2003573C00876539 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
+		16CB061F200365C500876539 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				1623F02B1FF3937B006224D9 /* InputTextField.swift */,
+				16CB061920031CA700876539 /* UIImageViewDownloadImage.swift */,
+				16CB061D2003573C00876539 /* HUDView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 			children = (
 				16FAA3D01FEFA47300696292 /* Segue.swift */,
 				16CB060C2001081A00876539 /* Book.swift */,
+				16CB061F200365C500876539 /* Functions.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -301,8 +310,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CB061A20031CA700876539 /* UIImageViewDownloadImage.swift in Sources */,
 				16FAA3C31FEF8FE100696292 /* UserCell.swift in Sources */,
 				16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */,
+				16CB0620200365C500876539 /* Functions.swift in Sources */,
 				16CB060D2001081A00876539 /* Book.swift in Sources */,
 				16CB060F2001B4A300876539 /* LoginViewController.swift in Sources */,
 				1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */,
@@ -318,6 +329,7 @@
 				16CB06182002F96F00876539 /* SuperUserViewController.swift in Sources */,
 				16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */,
 				16BF80252000E8710027E300 /* APIDataSource.swift in Sources */,
+				16CB061E2003573C00876539 /* HUDView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

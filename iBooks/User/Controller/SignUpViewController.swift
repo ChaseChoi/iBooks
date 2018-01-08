@@ -23,7 +23,6 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         setUpAddTargetIsNotEmptyTextFields()
-        idTextfield.becomeFirstResponder()
         
     }
     
