@@ -25,10 +25,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        //test
-////        let sampleIsbn = "9781451648539"
-//        let sampleIsbn = "978121246678"
-//        finishScanning(isbn: sampleIsbn)
         
         guard let captureDevice = AVCaptureDevice.default(for: .video) else {
             warning(title: "相机识别失败", message: "请使用带有相机的设备", titleForAction: "好")
@@ -65,6 +61,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                 if object.type == .ean13 {
                     captureSession.stopRunning()
                     finishScanning(isbn: object.stringValue!)
+                    return
                 }
             }
         }
@@ -79,13 +76,12 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func finishScanning(isbn: String) {
-        let alert = UIAlertController(title: "扫描完成", message: "ISBN: \(isbn)", preferredStyle: .alert)
-        // use closure 
-        let action = UIAlertAction(title: "完成", style: .default, handler: {actions in self.delegate?.scanViewController(self, finishScanning: isbn)} )
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+       self.delegate?.scanViewController(self, finishScanning: isbn)
     }
     
+    @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 

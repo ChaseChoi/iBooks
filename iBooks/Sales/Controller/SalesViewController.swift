@@ -22,14 +22,11 @@ class SalesViewController: UIViewController {
             controller.delegate = self
         }
     }
-    @IBAction func unwindScanCancel(with segue: UIStoryboardSegue) {
-        dismiss(animated: true, completion: nil)
-    }
 }
 
 extension SalesViewController: ScanViewControllerDelegate {
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
-        print("Get ISBN: \(isbn)")
+        print("Sales got ISBN: \(isbn)")
         
         APIDataSource.loadJSON(isbn: isbn) { (result: Book?) in
             self.bookItem = result

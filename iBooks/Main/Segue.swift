@@ -12,6 +12,6 @@ enum Segue: String {
     case saleBookScannerView
     case signUpView
     case addBookScannerView
-    case adminLogin
-    
+    case superUserLogin
+    case superUserView
 }

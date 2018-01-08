@@ -17,6 +17,7 @@
 		16CB06112002241600876539 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB06102002241600876539 /* SignUpViewController.swift */; };
 		16CB061320023F3600876539 /* AddBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061220023F3600876539 /* AddBooksViewController.swift */; };
 		16CB0616200241A800876539 /* Scanner.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16CB0614200241A800876539 /* Scanner.storyboard */; };
+		16CB06182002F96F00876539 /* SuperUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB06172002F96F00876539 /* SuperUserViewController.swift */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		16CB06102002241600876539 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		16CB061220023F3600876539 /* AddBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBooksViewController.swift; sourceTree = "<group>"; };
 		16CB0615200241A800876539 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/iBooks/Storyboard/Base.lproj/Scanner.storyboard; sourceTree = "<group>"; };
+		16CB06172002F96F00876539 /* SuperUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperUserViewController.swift; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				16CA5CEC1FF39E7000784A2A /* AdminViewController.swift */,
 				16CB060E2001B4A300876539 /* LoginViewController.swift */,
 				16CB061220023F3600876539 /* AddBooksViewController.swift */,
+				16CB06172002F96F00876539 /* SuperUserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,
 				16CB061320023F3600876539 /* AddBooksViewController.swift in Sources */,
+				16CB06182002F96F00876539 /* SuperUserViewController.swift in Sources */,
 				16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */,
 				16BF80252000E8710027E300 /* APIDataSource.swift in Sources */,
 			);

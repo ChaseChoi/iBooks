@@ -18,11 +18,7 @@ class LoginViewController: UIViewController {
         setUpAddTargetIsNotEmptyTextFields()
         userInput.becomeFirstResponder()
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segue.adminLogin.rawValue {
-            print("Gotcha")
-        }
-    }
+
     @IBAction func confirm() {
         
     }
