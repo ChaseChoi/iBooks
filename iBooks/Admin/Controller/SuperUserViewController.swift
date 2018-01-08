@@ -35,10 +35,18 @@ extension SuperUserViewController: ScanViewControllerDelegate {
             self.bookItem = result
         }
         dismiss(animated: true, completion: nil)
+        
         if bookItem != nil {
+            // display the detail info of the book
             performSegue(withIdentifier: Segue.addBookView.rawValue, sender: nil)
+        } else {
+            // alert when the book is nil
+            let alert = UIAlertController(title: "网络错误", message: "请重新扫描书本条形码", preferredStyle: .alert)
+            let action = UIAlertAction(title: "好", style: .default, handler: nil)
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
         }
-        // TODO - warning when book is nil
-        print("Book is nil!")
+        
     }
 }
