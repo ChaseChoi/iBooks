@@ -11,17 +11,22 @@
 import Foundation
 
 class APIDataSource {
-    static func loadJSON(isbn: String, completion: @escaping (Book?) -> ()) {
+    static func loadJSON(isbn: String, completion: @escaping (Book?, Bool) -> ()) {
         let jsonUrlString = "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=AIzaSyCA9Y_caECNgef4hfVvzkZmqftIgs7Nlw4"
+        var status = false
         
         guard let url = URL(string: jsonUrlString) else {
             print("URL ERROR!")
+            status = false
+            completion(nil, status)
             return
         }
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             var bookItem: Book?
-            
+
             guard let data = data else {
+                status = false
+                completion(bookItem, status)
                 return
             }
             do {
@@ -29,11 +34,13 @@ class APIDataSource {
                 
                 if apiData.totalItems != 0 {
                     bookItem = Book(data: apiData)
+                    status = true
                 }
             } catch let jsonErr {
+                status = false
                 print("Json error:", jsonErr)
             }
-            completion(bookItem)
+            completion(bookItem, status)
             }.resume()
         
         

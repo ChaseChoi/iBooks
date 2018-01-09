@@ -32,13 +32,13 @@ class SuperUserViewController: UIViewController {
 
 extension SuperUserViewController: ScanViewControllerDelegate {
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
-      
-        APIDataSource.loadJSON(isbn: isbn) { (result: Book?) in
+         
+        APIDataSource.loadJSON(isbn: isbn) { (result: Book?, status: Bool) in
             self.bookItem = result
             
             DispatchQueue.main.async {
                 controller.dismiss(animated: true, completion: nil)
-                if self.bookItem != nil {
+                if status == true {
                     // display the detail info of the book
                     self.performSegue(withIdentifier: Segue.addBookView.rawValue, sender: nil)
                 } else {
