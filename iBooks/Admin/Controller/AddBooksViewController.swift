@@ -32,6 +32,9 @@ class AddBooksViewController: UITableViewController, UIGestureRecognizerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // dynamic cell height
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         setUpAddTargetIsNotEmptyTextFields()
         setupUI()
@@ -134,6 +137,13 @@ class AddBooksViewController: UITableViewController, UIGestureRecognizerDelegate
 extension AddBooksViewController {
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 
