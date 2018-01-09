@@ -10,9 +10,13 @@ import UIKit
 
 class SuperUserViewController: UIViewController {
     var bookItem: Book?
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // change the log out button to red color
+        logoutButton.tintColor = .red
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -24,6 +28,10 @@ class SuperUserViewController: UIViewController {
             let controller = navigation.topViewController as! AddBooksViewController
             controller.bookItem = bookItem
         }
+    }
+    
+    @IBAction func logout() {
+        dismiss(animated: true, completion: nil)
     }
 }
 

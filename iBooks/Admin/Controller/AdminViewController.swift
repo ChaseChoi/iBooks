@@ -9,14 +9,10 @@
 import UIKit
 
 class AdminViewController: UIViewController {
-    // test
-    @IBOutlet weak var testButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
-    @IBAction func backToAdminView(with segue: UIStoryboardSegue) {}
 }
 

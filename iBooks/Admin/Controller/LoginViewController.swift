@@ -40,7 +40,10 @@ class LoginViewController: UIViewController {
         }
         confirmButton.isEnabled = true
     }
-
+    
+    @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
 
