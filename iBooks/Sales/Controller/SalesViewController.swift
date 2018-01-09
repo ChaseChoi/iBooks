@@ -26,11 +26,6 @@ class SalesViewController: UIViewController {
 
 extension SalesViewController: ScanViewControllerDelegate {
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
-        print("Sales got ISBN: \(isbn)")
         
-        APIDataSource.loadJSON(isbn: isbn) { (result: Book?) in
-            self.bookItem = result
-        }
-        dismiss(animated: true, completion: nil)
     }
 }

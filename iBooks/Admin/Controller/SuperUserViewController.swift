@@ -20,7 +20,6 @@ class SuperUserViewController: UIViewController {
             let controller = segue.destination as! ScanViewController
             controller.delegate = self
         } else if segue.identifier == Segue.addBookView.rawValue {
-            
             let navigation = segue.destination as! UINavigationController
             let controller = navigation.topViewController as! AddBooksViewController
             controller.bookItem = bookItem
@@ -28,25 +27,28 @@ class SuperUserViewController: UIViewController {
     }
 }
 
+// do not wait json
+// ref: https://stackoverflow.com/questions/42804320/how-to-wait-for-the-urlsession-to-finish-before-returning-the-result-from-a-func
+
 extension SuperUserViewController: ScanViewControllerDelegate {
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
-        print("Superuser got isbn: \(isbn)")
+      
         APIDataSource.loadJSON(isbn: isbn) { (result: Book?) in
             self.bookItem = result
-        }
-        dismiss(animated: true, completion: nil)
-        
-        if bookItem != nil {
-            // display the detail info of the book
-            performSegue(withIdentifier: Segue.addBookView.rawValue, sender: nil)
-        } else {
-            // alert when the book is nil
-            let alert = UIAlertController(title: "网络错误", message: "请重新扫描书本条形码", preferredStyle: .alert)
-            let action = UIAlertAction(title: "好", style: .default, handler: nil)
-            alert.addAction(action)
             
-            present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                controller.dismiss(animated: true, completion: nil)
+                if self.bookItem != nil {
+                    // display the detail info of the book
+                    self.performSegue(withIdentifier: Segue.addBookView.rawValue, sender: nil)
+                } else {
+                    // alert when the book is nil
+                    let alert = UIAlertController(title: "网络错误", message: "请重新扫描书本条形码", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "好", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
-        
     }
 }

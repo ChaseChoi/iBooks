@@ -76,11 +76,6 @@ class AddBooksViewController: UITableViewController, UIGestureRecognizerDelegate
         self.view.endEditing(true)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("hey")
-        view.endEditing(true)
-    }
-    
     func setupUI() {
         coverImageView.image = UIImage(named: "coverPlaceholder")
         if let url = bookItem?.imageURL {
