@@ -37,3 +37,21 @@ extension Book {
         }
     }
 }
+
+extension Book: SQLTable {
+    static var createStatement: String {
+        return """
+        create table if not exists \(tableName.Books.rawValue) (
+            ISBN TEXT PRIMARY KEY NOT NULL,
+            ImageURL TEXT,
+            Title TEXT,
+            Authors TEXT,
+            Price REAL,
+            Categories TEXT,
+            Publisher TEXT,
+            Number INT
+        );
+        """
+    }
+    
+}

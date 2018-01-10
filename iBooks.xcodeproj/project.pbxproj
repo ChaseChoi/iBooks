@@ -21,6 +21,8 @@
 		16CB061A20031CA700876539 /* UIImageViewDownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061920031CA700876539 /* UIImageViewDownloadImage.swift */; };
 		16CB061E2003573C00876539 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061D2003573C00876539 /* HUDView.swift */; };
 		16CB0620200365C500876539 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB061F200365C500876539 /* Functions.swift */; };
+		16CB06262004BA8100876539 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB06252004BA8100876539 /* SQLiteDatabase.swift */; };
+		16CB062A2004F7D200876539 /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB06292004F7D200876539 /* SQLTable.swift */; };
 		16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FAA3A91FEF894A00696292 /* AppDelegate.swift */; };
 		16FAA3AF1FEF894A00696292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3AD1FEF894A00696292 /* Main.storyboard */; };
 		16FAA3B11FEF894A00696292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FAA3B01FEF894A00696292 /* Assets.xcassets */; };
@@ -51,6 +53,9 @@
 		16CB061920031CA700876539 /* UIImageViewDownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewDownloadImage.swift; sourceTree = "<group>"; };
 		16CB061D2003573C00876539 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		16CB061F200365C500876539 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		16CB06222004B85600876539 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		16CB06252004BA8100876539 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		16CB06292004F7D200876539 /* SQLTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLTable.swift; sourceTree = "<group>"; };
 		16FAA3A61FEF894A00696292 /* iBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FAA3A91FEF894A00696292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FAA3AE1FEF894A00696292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,11 +105,29 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		16CB06212004B85500876539 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16CB06222004B85600876539 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16CB06242004BA4200876539 /* SQLiteDB */ = {
+			isa = PBXGroup;
+			children = (
+				16CB06252004BA8100876539 /* SQLiteDatabase.swift */,
+				16CB06292004F7D200876539 /* SQLTable.swift */,
+			);
+			path = SQLiteDB;
+			sourceTree = "<group>";
+		};
 		16FAA39D1FEF894A00696292 = {
 			isa = PBXGroup;
 			children = (
 				16FAA3A81FEF894A00696292 /* iBooks */,
 				16FAA3A71FEF894A00696292 /* Products */,
+				16CB06212004B85500876539 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +142,7 @@
 		16FAA3A81FEF894A00696292 /* iBooks */ = {
 			isa = PBXGroup;
 			children = (
+				16CB06242004BA4200876539 /* SQLiteDB */,
 				16FAA3DA1FEFE03000696292 /* API */,
 				16FAA3CF1FEFA46700696292 /* Main */,
 				16FAA3BE1FEF8B4600696292 /* Storyboard */,
@@ -319,6 +343,7 @@
 				1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */,
 				16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
+				16CB062A2004F7D200876539 /* SQLTable.swift in Sources */,
 				16BF80232000BE9D0027E300 /* APIData.swift in Sources */,
 				16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */,
 				16CB06112002241600876539 /* SignUpViewController.swift in Sources */,
@@ -330,6 +355,7 @@
 				16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */,
 				16BF80252000E8710027E300 /* APIDataSource.swift in Sources */,
 				16CB061E2003573C00876539 /* HUDView.swift in Sources */,
+				16CB06262004BA8100876539 /* SQLiteDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

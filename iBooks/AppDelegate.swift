@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupDefaultColor()
+        
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 
@@ -42,11 +44,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     func setupDefaultColor() {
-        UITabBar.appearance().tintColor = UIColor(red:0.17, green:0.63, blue:0.79, alpha:1.0)
-        UINavigationBar.appearance().tintColor = UIColor(red:0.17, green:0.63, blue:0.79, alpha:1.0)
+//        UITabBar.appearance().tintColor = UIColor(red:0.17, green:0.63, blue:0.79, alpha:1.0)
+        UITabBar.appearance().tintColor = UIColor(red:0, green:123/255, blue:187/255, alpha:1.0)
+//        UINavigationBar.appearance().tintColor = UIColor(red:0.17, green:0.63, blue:0.79, alpha:1.0)
+        
+        
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = UIColor(red:0, green:123/255, blue:187/255, alpha:1.0)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         
         UITabBar.appearance().isTranslucent = false
         UINavigationBar.appearance().isTranslucent = false
     }
+    
+   
 }
 

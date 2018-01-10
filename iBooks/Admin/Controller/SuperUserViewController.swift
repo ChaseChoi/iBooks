@@ -14,9 +14,6 @@ class SuperUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // change the log out button to red color
-        logoutButton.tintColor = .red
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
