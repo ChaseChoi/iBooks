@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import GRDB
+
+var dbQueue: DatabaseQueue!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupDefaultColor()
-        
         UIApplication.shared.statusBarStyle = .lightContent
+        try! setupDatabase(application)
+        try! AppDatabase.create(table: Book.self)
+        try! AppDatabase.create(table: User.self)
         return true
     }
 
@@ -56,7 +61,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().isTranslucent = false
         UINavigationBar.appearance().isTranslucent = false
     }
-    
-   
+    private func setupDatabase(_ application: UIApplication) throws {
+        let databaseURL = try FileManager.default
+            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            .appendingPathComponent("iBooks.sqlite")
+        dbQueue = try AppDatabase.openDatabase(at: databaseURL.path)
+        
+        // Be a nice iOS citizen, and don't consume too much memory
+        // See https://github.com/groue/GRDB.swift/#memory-management
+        dbQueue.setupMemoryManagement(in: application)
+    }
 }
 

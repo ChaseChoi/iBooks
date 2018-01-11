@@ -20,24 +20,43 @@ class UserDataSource {
     }
     
     func fetch() {
-        let user0 = User(uid: "124124", name: "Chase", vip: "0", phone: "124214124", amount: "124.0")
-        userList.append(user0)
-        let user1 = User(uid: "121224", name: "Cindy", vip: "1", phone: "124214124", amount: "244.0")
-        userList.append(user1)
-        let user2 = User(uid: "221224", name: "Cindy", vip: "1", phone: "124214124", amount: "244.0")
-        userList.append(user2)
-        let user3 = User(uid: "331224", name: "Cindy", vip: "1", phone: "124214124", amount: "244.0")
-        userList.append(user3)
-        let user4 = User(uid: "521224", name: "Cindy", vip: "1", phone: "124214124", amount: "244.0")
-        userList.append(user4)
-        let user5 = User(uid: "341224", name: "John", vip: "2", phone: "124214124", amount: "244.0")
-        userList.append(user5)
+        if let users = try! AppDatabase.getAllUsers() {
+            userList = users
+        } else {
+            print("Empty user list")
+        }
     }
     
-    func add(user: User) {
-        userList.append(user)
+    func add(user: User) -> Bool{
+        // check if uid repeat
+        let count = try! dbQueue.inDatabase { db in
+            try Int.fetchOne(db, """
+                SELECT COUNT(*) FROM \(tableName.Users.rawValue)
+                where uid == \(user.uid)
+                """)!
+        }
+        // repeat
+        if count != 0 {
+            return false
+        } else {
+            try! dbQueue.inDatabase { db in
+                try user.insert(db)
+            }
+            userList.append(user)
+            return true
+        }
+        
+        
     }
     func deleteUser(at index: IndexPath) {
+        let uid = userList[index.row].uid
         userList.remove(at: index.row)
+        
+        try! dbQueue.inDatabase { db in
+            try db.execute("""
+            delete from \(tableName.Users.rawValue)
+            where uid == \(uid)
+            """)
+        }
     }
 }

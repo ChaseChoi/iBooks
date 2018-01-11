@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import GRDB
 
-struct Book {
+struct Book: Codable {
     var isbn: String
     var imageURL: URL?
     var title: String
@@ -20,6 +21,7 @@ struct Book {
 }
 
 extension Book {
+
     init(data: APIData) {
         let bookItem = data.items![0]
         
@@ -42,16 +44,19 @@ extension Book: SQLTable {
     static var createStatement: String {
         return """
         create table if not exists \(tableName.Books.rawValue) (
-            ISBN TEXT PRIMARY KEY NOT NULL,
-            ImageURL TEXT,
-            Title TEXT,
-            Authors TEXT,
-            Price REAL,
-            Categories TEXT,
-            Publisher TEXT,
-            Number INT
+            isbn TEXT PRIMARY KEY NOT NULL,
+            imageURL TEXT,
+            title TEXT,
+            authors TEXT,
+            price REAL,
+            categories TEXT,
+            publisher TEXT,
+            number INT
         );
         """
     }
-    
+
+}
+extension Book: RowConvertible, Persistable {
+    static let databaseTableName = tableName.Books.rawValue
 }

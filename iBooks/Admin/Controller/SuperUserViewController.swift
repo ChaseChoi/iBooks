@@ -24,6 +24,7 @@ class SuperUserViewController: UIViewController {
             let navigation = segue.destination as! UINavigationController
             let controller = navigation.topViewController as! AddBooksViewController
             controller.bookItem = bookItem
+            controller.delegate = self
         }
     }
     
@@ -55,5 +56,13 @@ extension SuperUserViewController: ScanViewControllerDelegate {
                 }
             }
         }
+    }
+}
+
+extension SuperUserViewController: AddBooksViewControllerDelegate {
+    func addBooksViewController(_ controller: AddBooksViewController, finishAdding bookItem: Book) {
+        dismiss(animated: true, completion: nil)
+        print("superUser get the isbn")
+        print(bookItem.isbn)
     }
 }

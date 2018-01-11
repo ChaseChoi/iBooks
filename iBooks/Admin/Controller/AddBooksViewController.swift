@@ -14,9 +14,15 @@ struct viewTags {
     static let priceInput = 7666
 }
 
+protocol AddBooksViewControllerDelegate: class {
+    func addBooksViewController(_ controller: AddBooksViewController, finishAdding bookItem: Book)
+}
+
 class AddBooksViewController: UITableViewController, UIGestureRecognizerDelegate {
     var bookItem: Book?
     var downloadTask: URLSessionDownloadTask?
+    var delegate: AddBooksViewControllerDelegate?
+    
     @IBOutlet weak var coverImageView: UIImageView!
     
     @IBOutlet weak var isbnLabel: UILabel!
@@ -109,7 +115,7 @@ class AddBooksViewController: UITableViewController, UIGestureRecognizerDelegate
         // delay to finish the hud
         let delayInSeconds = 0.6
         afterDelay(delayInSeconds) {
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.addBooksViewController(self, finishAdding: self.bookItem!)
         }
     }
     

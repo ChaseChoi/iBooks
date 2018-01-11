@@ -8,6 +8,7 @@
 
 import Foundation
 import SQLite3
+import GRDB
 
 enum SQLiteError: Error {
     case OpenDatabase(msg: String)

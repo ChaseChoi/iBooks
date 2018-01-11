@@ -90,16 +90,28 @@ extension UsersListViewController: UITableViewDataSource, UITableViewDelegate {
 extension UsersListViewController: SignUpViewControllerDelegate {
     
     func signUpViewController(_ controller: SignUpViewController, didFinishSigningUp user: User) {
+        
+        
         let nextRowIndex = dataSource.getNumOfUsers()
         
         // update data source
-        dataSource.add(user: user)
+        let flag = dataSource.add(user: user)
+        if flag == true {
+            // update table view
+            let indexPath = IndexPath(row: nextRowIndex, section: 0)
+            let indexPaths = [indexPath]
+            tableView.insertRows(at: indexPaths, with: .automatic)
+            dismiss(animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "ID重复", message: "请修改并重新输入ID", preferredStyle: .alert)
+            let action = UIAlertAction(title: "好", style: .default){
+                empty in controller.idTextfield.text = ""
+                controller.signUpButton.isEnabled = false
+            }
+            alert.addAction(action)
+            controller.present(alert, animated: true, completion: nil)
+        }
         
-        // update table view
-        let indexPath = IndexPath(row: nextRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-        dismiss(animated: true, completion: nil)
     }
     
 

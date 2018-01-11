@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import GRDB
 
-struct User {
-    var uid: String?
+struct User: Codable {
+    var uid: String
     var name: String?
     var vip: String?
     var phone: String?
@@ -25,3 +26,23 @@ extension User {
         self.amount = "0.0"
     }
 }
+
+extension User: SQLTable {
+    static var createStatement: String {
+        return """
+        create table if not exists \(tableName.Users.rawValue) (
+        uid TEXT PRIMARY KEY NOT NULL,
+        name TEXT,
+        vip TEXT,
+        phone TEXT,
+        amount TEXT
+        );
+        """
+    }
+}
+
+extension User: RowConvertible, Persistable {
+    static let databaseTableName = tableName.Users.rawValue
+}
+
+
