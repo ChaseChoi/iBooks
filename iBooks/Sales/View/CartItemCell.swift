@@ -9,15 +9,14 @@
 import Foundation
 import UIKit
 
-
 class CartItemCell: UITableViewCell {
     
     @IBOutlet weak var bookCover: UIImageView!
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var authorsLabel: UILabel!
-    var downloadTask: URLSessionDownloadTask?
-   
+    
+    
     var bookItem: Book? {
         didSet{
             updateUI()
@@ -26,9 +25,12 @@ class CartItemCell: UITableViewCell {
     
     func updateUI() {
         // set default cover image
-        bookCover.image = UIImage(named: "coverPlaceholder")
+        
+        
         if let url = bookItem?.imageURL {
-            downloadTask = bookCover.loadImage(url: url)
+            bookCover.loadImage(url: url)
+        } else {
+            bookCover.image = UIImage(named: "coverPlaceholder")
         }
         bookTitleLabel.text = bookItem?.title
         authorsLabel.text = bookItem?.authors

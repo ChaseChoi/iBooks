@@ -18,6 +18,12 @@ class SalesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // define cache of 200M
+        let memoryCapacity = 200 * 1024 * 1024
+        let diskCapacity = 200 * 1024 * 1024
+        let urlCache = URLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity, diskPath: "cacheDiskPath")
+        URLCache.shared = urlCache
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,14 +39,22 @@ extension SalesViewController: ScanViewControllerDelegate {
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
         dismiss(animated: true, completion: nil)
         if let book = self.dataSource.fetchBookFromDatabase(with: isbn) {
+            let nextRowIndex = dataSource.getNumOfItems()
+            // update data source
             self.dataSource.add(book: book)
-            self.cartListView.reloadData()
+            
+            // update UI
+            let indexPath = IndexPath(row: nextRowIndex, section: 0)
+            let indexPaths = [indexPath]
+            self.cartListView.insertRows(at: indexPaths, with: .automatic)
+            
         } else {
             let alert = UIAlertController(title: "图书数据获取失败", message: "请咨询相关工作人员!", preferredStyle: .alert)
             let action = UIAlertAction(title: "好", style: .default, handler: nil)
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         }
+        
     }
 }
 

@@ -12,6 +12,7 @@ import Foundation
 class SalesDataSource {
     var cartList: [Book] = []
     
+    
     func add(book: Book) {
         cartList.append(book)
     }

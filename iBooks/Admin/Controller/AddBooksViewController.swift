@@ -20,7 +20,7 @@ protocol AddBooksViewControllerDelegate: class {
 
 class AddBooksViewController: UITableViewController, UIGestureRecognizerDelegate {
     var bookItem: Book?
-    var downloadTask: URLSessionDownloadTask?
+    
     var delegate: AddBooksViewControllerDelegate?
     
     @IBOutlet weak var coverImageView: UIImageView!
@@ -88,7 +88,7 @@ class AddBooksViewController: UITableViewController, UIGestureRecognizerDelegate
     func setupUI() {
         coverImageView.image = UIImage(named: "coverPlaceholder")
         if let url = bookItem?.imageURL {
-            downloadTask = coverImageView.loadImage(url: url)
+            coverImageView.loadImage(url: url)
         }
         if let title = bookItem?.title {
             titleLabel.text! = title
