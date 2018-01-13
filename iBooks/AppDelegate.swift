@@ -24,6 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         try! setupDatabase(application)
         try! AppDatabase.create(table: Book.self)
         try! AppDatabase.create(table: User.self)
+        
+        // define cache of 200M
+        let memoryCapacity = 500 * 1024 * 1024
+        let diskCapacity = 500 * 1024 * 1024
+        let urlCache = URLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity, diskPath: "myCache")
+        URLCache.shared = urlCache
+        
         return true
     }
 

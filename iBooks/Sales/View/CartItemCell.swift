@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class CartItemCell: UITableViewCell {
     
     @IBOutlet weak var bookCover: UIImageView!
@@ -24,11 +25,9 @@ class CartItemCell: UITableViewCell {
     }
     
     func updateUI() {
-        // set default cover image
-        
-        
         if let url = bookItem?.imageURL {
-            bookCover.loadImage(url: url)
+            bookCover.loadImage(url: url)  
+            
         } else {
             bookCover.image = UIImage(named: "coverPlaceholder")
         }

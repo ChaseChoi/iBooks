@@ -18,12 +18,6 @@ class SalesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // define cache of 200M
-        let memoryCapacity = 200 * 1024 * 1024
-        let diskCapacity = 200 * 1024 * 1024
-        let urlCache = URLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity, diskPath: "cacheDiskPath")
-        URLCache.shared = urlCache
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,6 +81,9 @@ extension SalesViewController: UITableViewDelegate, UITableViewDataSource {
         // update UI
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
     
 }
