@@ -11,34 +11,13 @@ import GRDB
 
 class SalesViewController: UIViewController {
     
+    @IBOutlet weak var cartListView: UITableView!
+    
     var bookItem: Book?
+    let dataSource = SalesDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let book = Book(isbn: "86", imageURL: URL.init(string: "www.baidu.com"), title: "Steve", authors: "Chase", price: 100, categories: "Biography", publisher: "Crown", number: 120)
-        
-//        do {
-//            try AppDatabase.insertBook(named: book)
-//        } catch let error as DatabaseError  where error.resultCode == .SQLITE_CONSTRAINT  {
-//            print("same book")
-//        } catch {
-//            print("Insert error!")
-//        }
-       
-        
-        if let book = try! AppDatabase.getBook(with: "86") {
-            if let url = book.imageURL {
-               print(url)
-            }
-        } else {
-            print( "no such books" )
-        }
-   
-//        if let books = try! AppDatabase.getAllBooks() {
-//            for book in books {
-//                print(book.isbn)
-//            }
-//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,19 +27,52 @@ class SalesViewController: UIViewController {
         }
     }
     
-//    // ref: https://stackoverflow.com/questions/44376599/sqlite-database-file-managing-in-swift-3-and-ios-copy-from-local-and-or-bundle
-//    func prepareDatabaseFile() -> String {
-//        let fileManager = FileManager.default
-//        let fileName = "iBooks"
-//        let baseURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-//        let documentURL = baseURL.appendingPathComponent(fileName).appendingPathExtension("sqlite")
-//
-//        return documentURL.path
-//    }
 }
 
 extension SalesViewController: ScanViewControllerDelegate {
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
-        
+        dismiss(animated: true, completion: nil)
+        if let book = self.dataSource.fetchBookFromDatabase(with: isbn) {
+            self.dataSource.add(book: book)
+            self.cartListView.reloadData()
+        } else {
+            let alert = UIAlertController(title: "图书数据获取失败", message: "请咨询相关工作人员!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "好", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
+}
+
+extension SalesViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let numberOfRows = dataSource.getNumOfItems()
+        if numberOfRows == 0 {
+            cartListView.isHidden = true
+        } else {
+            cartListView.isHidden = false
+        }
+        return numberOfRows
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewReuseIdentifier.cartListItem, for: indexPath) as! CartItemCell
+        cell.bookItem = dataSource.getBookItem(at: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        dataSource.deleteBook(at: indexPath)
+        
+        // update UI
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+    
 }

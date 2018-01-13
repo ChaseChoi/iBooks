@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1623F02A1FF38F92006224D9 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1623F0281FF38F92006224D9 /* Admin.storyboard */; };
 		1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623F02B1FF3937B006224D9 /* InputTextField.swift */; };
+		164F72AE2009A23300DAC290 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164F72AD2009A23300DAC290 /* CartItemCell.swift */; };
+		164F72B02009A75900DAC290 /* SalesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164F72AF2009A75900DAC290 /* SalesDataSource.swift */; };
 		16B7CDB920070DFA00F239E3 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7CDB820070DFA00F239E3 /* AppDatabase.swift */; };
 		16B7CDBB2007450000F239E3 /* DBTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7CDBA2007450000F239E3 /* DBTables.swift */; };
 		16BF80232000BE9D0027E300 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF80222000BE9D0027E300 /* APIData.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		1623F0291FF38F92006224D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iBooks/Storyboard/Base.lproj/Admin.storyboard; sourceTree = "<group>"; };
 		1623F02B1FF3937B006224D9 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		164F72AD2009A23300DAC290 /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		164F72AF2009A75900DAC290 /* SalesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesDataSource.swift; sourceTree = "<group>"; };
 		16B7CDB820070DFA00F239E3 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		16B7CDBA2007450000F239E3 /* DBTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTables.swift; sourceTree = "<group>"; };
 		16BF80222000BE9D0027E300 /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
@@ -91,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		164F72AC2009A20600DAC290 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				164F72AD2009A23300DAC290 /* CartItemCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		16B7CDB720070DE000F239E3 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 		16FAA3BC1FEF8B3400696292 /* Sales */ = {
 			isa = PBXGroup;
 			children = (
+				164F72AC2009A20600DAC290 /* View */,
 				16FAA3DF1FEFE11F00696292 /* Model */,
 				16FAA3D21FEFCD0200696292 /* Controller */,
 			);
@@ -272,6 +285,7 @@
 		16FAA3DF1FEFE11F00696292 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				164F72AF2009A75900DAC290 /* SalesDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,12 +440,14 @@
 				16CB060F2001B4A300876539 /* LoginViewController.swift in Sources */,
 				1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */,
 				16FAA3CA1FEF933C00696292 /* UsersListViewController.swift in Sources */,
+				164F72B02009A75900DAC290 /* SalesDataSource.swift in Sources */,
 				16FAA3AA1FEF894A00696292 /* AppDelegate.swift in Sources */,
 				16BF80232000BE9D0027E300 /* APIData.swift in Sources */,
 				16CA5CED1FF39E7000784A2A /* AdminViewController.swift in Sources */,
 				16CB06112002241600876539 /* SignUpViewController.swift in Sources */,
 				16FAA3CC1FEF94E100696292 /* UserDataSource.swift in Sources */,
 				16B7CDB920070DFA00F239E3 /* AppDatabase.swift in Sources */,
+				164F72AE2009A23300DAC290 /* CartItemCell.swift in Sources */,
 				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,
 				16CB061320023F3600876539 /* AddBooksViewController.swift in Sources */,

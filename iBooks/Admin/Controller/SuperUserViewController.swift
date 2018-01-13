@@ -62,7 +62,20 @@ extension SuperUserViewController: ScanViewControllerDelegate {
 extension SuperUserViewController: AddBooksViewControllerDelegate {
     func addBooksViewController(_ controller: AddBooksViewController, finishAdding bookItem: Book) {
         dismiss(animated: true, completion: nil)
-        print("superUser get the isbn")
-        print(bookItem.isbn)
+        let flag = AppDatabase.insertBook(named: bookItem)
+        if flag {
+            print("SuperUserView add books to db successfully!")
+            
+        } else {
+            print("Already exists")
+        }
+        
+//        if let book = try! AppDatabase.getBook(with: "8656875544445") {
+//            if let url = book.imageURL {
+//                print(url)
+//            }
+//        } else {
+//            print( "no such books" )
+//        }
     }
 }

@@ -22,14 +22,27 @@ struct AppDatabase {
         }
     }
     
-    static func insertBook(named book: Book) throws {
-        try dbQueue.inDatabase { db in
-            try db.execute("""
-            insert into \(tableName.Books.rawValue)
-            (isbn, imageURL, title, authors, price, categories, publisher, number)
-            values(?, ?, ?, ?, ?, ?, ?, ?)
-            """, arguments: [book.isbn, book.imageURL?.absoluteString, book.title, book.authors, book.price, book.categories, book.publisher, book.number])
+    static func insertBook(named book: Book) -> Bool{
+        // check if uid repeat
+        let count = try? dbQueue.inDatabase { db in
+            try Int.fetchOne(db, """
+                SELECT COUNT(*) FROM \(tableName.Books.rawValue)
+                where isbn == \(book.isbn)
+                """)!
         }
+        if count != 0 {
+            return false
+        } else {
+            try! dbQueue.inDatabase { db in
+                try db.execute("""
+                    insert into \(tableName.Books.rawValue)
+                    (isbn, imageURL, title, authors, price, categories, publisher, number)
+                    values(?, ?, ?, ?, ?, ?, ?, ?)
+                    """, arguments: [book.isbn, book.imageURL?.absoluteString, book.title, book.authors, book.price, book.categories, book.publisher, book.number])
+            }
+            return true
+        }
+    
     }
     
     static func getBook(with isbn: String) throws -> Book? {

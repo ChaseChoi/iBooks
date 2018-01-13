@@ -29,10 +29,10 @@ class UserDataSource {
     
     func add(user: User) -> Bool{
         // check if uid repeat
-        let count = try! dbQueue.inDatabase { db in
+        let count = try? dbQueue.inDatabase { db in
             try Int.fetchOne(db, """
-                SELECT COUNT(*) FROM \(tableName.Users.rawValue)
-                where uid == \(user.uid)
+                select count(*) from \(tableName.Users.rawValue)
+                where uid = \(user.uid)
                 """)!
         }
         // repeat
@@ -55,7 +55,7 @@ class UserDataSource {
         try! dbQueue.inDatabase { db in
             try db.execute("""
             delete from \(tableName.Users.rawValue)
-            where uid == \(uid)
+            where uid = \(uid)
             """)
         }
     }

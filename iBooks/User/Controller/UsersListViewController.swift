@@ -10,6 +10,7 @@ import UIKit
 
 struct TableViewReuseIdentifier {
     static let userListCell = "userThumbnail"
+    static let cartListItem = "cartListItem"
 }
 
 class UsersListViewController: UIViewController {
@@ -106,6 +107,7 @@ extension UsersListViewController: SignUpViewControllerDelegate {
             let alert = UIAlertController(title: "ID重复", message: "请修改并重新输入ID", preferredStyle: .alert)
             let action = UIAlertAction(title: "好", style: .default){
                 empty in controller.idTextfield.text = ""
+                controller.idTextfield.becomeFirstResponder()
                 controller.signUpButton.isEnabled = false
             }
             alert.addAction(action)
