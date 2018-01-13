@@ -12,12 +12,17 @@ import GRDB
 class SalesViewController: UIViewController {
     
     @IBOutlet weak var cartListView: UITableView!
+    @IBOutlet weak var confirmButton: UIBarButtonItem!
     
     var bookItem: Book?
     let dataSource = SalesDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // dynamic height
+        cartListView.estimatedRowHeight = cartListView.rowHeight
+        cartListView.rowHeight = UITableViewAutomaticDimension
+        confirmButton.isEnabled = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,8 +62,10 @@ extension SalesViewController: UITableViewDelegate, UITableViewDataSource {
         let numberOfRows = dataSource.getNumOfItems()
         if numberOfRows == 0 {
             cartListView.isHidden = true
+            confirmButton.isEnabled = false
         } else {
             cartListView.isHidden = false
+            confirmButton.isEnabled = true
         }
         return numberOfRows
     }

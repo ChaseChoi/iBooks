@@ -69,13 +69,5 @@ extension SuperUserViewController: AddBooksViewControllerDelegate {
         } else {
             print("Already exists")
         }
-        
-//        if let book = try! AppDatabase.getBook(with: "8656875544445") {
-//            if let url = book.imageURL {
-//                print(url)
-//            }
-//        } else {
-//            print( "no such books" )
-//        }
     }
 }

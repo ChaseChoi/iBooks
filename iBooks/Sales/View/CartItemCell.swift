@@ -16,7 +16,7 @@ class CartItemCell: UITableViewCell {
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var authorsLabel: UILabel!
-    
+    @IBOutlet weak var priceLabel: UILabel!
     
     var bookItem: Book? {
         didSet{
@@ -34,5 +34,12 @@ class CartItemCell: UITableViewCell {
         bookTitleLabel.text = bookItem?.title
         authorsLabel.text = bookItem?.authors
         publisherLabel.text = bookItem?.publisher
+        if let book = bookItem {
+            priceLabel.text = String(format: "%.2f", book.price)
+        }
+        
+    
+        
+        
     }
 }

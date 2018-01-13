@@ -110,6 +110,13 @@ class AddBooksViewController: UITableViewController, UIGestureRecognizerDelegate
         dismiss(animated: true, completion: nil)
     }
     @IBAction func done() {
+        if let price = Double(priceTextfield.text!) {
+            bookItem?.price = price
+        }
+        if let number = Int(numOfBooksTextfield.text!) {
+            bookItem?.number = number
+        }
+        
         let hudView = HUDView.hud(inView: navigationController!.view, animated: true)
         hudView.text = "完成"
         // delay to finish the hud
