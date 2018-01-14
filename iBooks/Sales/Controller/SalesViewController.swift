@@ -35,17 +35,24 @@ class SalesViewController: UIViewController {
 }
 
 extension SalesViewController: ScanViewControllerDelegate {
+    /// get isbn data from ScanViewController
     func scanViewController(_ controller: ScanViewController, finishScanning isbn: String) {
         dismiss(animated: true, completion: nil)
         if let book = self.dataSource.fetchBookFromDatabase(with: isbn) {
             let nextRowIndex = dataSource.getNumOfItems()
-            // update data source
-            self.dataSource.add(book: book)
             
-            // update UI
-            let indexPath = IndexPath(row: nextRowIndex, section: 0)
-            let indexPaths = [indexPath]
-            self.cartListView.insertRows(at: indexPaths, with: .automatic)
+            var newBook = book
+            newBook.setDefaultNumber()
+            
+            // update data source
+            if self.dataSource.add(book: newBook) {
+                // update UI
+                let indexPath = IndexPath(row: nextRowIndex, section: 0)
+                let indexPaths = [indexPath]
+                self.cartListView.insertRows(at: indexPaths, with: .automatic)
+            } else {
+                self.cartListView.reloadData()
+            }
             
         } else {
             let alert = UIAlertController(title: "图书数据获取失败", message: "请咨询相关工作人员!", preferredStyle: .alert)

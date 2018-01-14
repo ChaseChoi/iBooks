@@ -8,13 +8,21 @@
 
 import Foundation
 
-// maintain the cart list
+/// maintain the cart list
 class SalesDataSource {
     var cartList: [Book] = []
     
-    
-    func add(book: Book) {
+    ///add the book to data source; if repeat, return false, otherwise, true
+    func add(book: Book) -> Bool {
+        
+        for i in 0 ..< cartList.count {
+            if book.isbn == cartList[i].isbn {
+                cartList[i].changeNumberOfBooks(number: 1)
+                return false;
+            }
+        }
         cartList.append(book)
+        return true
     }
     func getBookItem(at indexPath: IndexPath) -> Book {
         return cartList[indexPath.row]
@@ -33,4 +41,10 @@ class SalesDataSource {
         }
         return nil
     }
+    
+    /// remove all the items in the cart list
+    func emptyCart() {
+        cartList.removeAll()
+    }
+    
 }

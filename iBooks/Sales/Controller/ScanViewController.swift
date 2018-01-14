@@ -20,7 +20,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     @IBOutlet weak var tipLabel: UILabel!
     
     var videoPreviewLayer = AVCaptureVideoPreviewLayer()
-    // setup session
+    
+    /// setup session
     let captureSession = AVCaptureSession()
     
     override func viewDidLoad() {

@@ -38,6 +38,23 @@ extension Book {
             self.categories = categories
         }
     }
+    
+    /**
+     - parameter number: the number of books to add/substract
+     */
+    mutating func changeNumberOfBooks(number: Int) {
+        self.number += number
+    }
+    
+    
+    mutating func changePrice(to number: Double) {
+        price = number
+    }
+    
+    /// set number of books to 1
+    mutating func setDefaultNumber() {
+        number = 1
+    }
 }
 
 extension Book: SQLTable {
