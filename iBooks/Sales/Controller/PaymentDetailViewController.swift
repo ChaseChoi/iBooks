@@ -13,11 +13,19 @@ class PaymentDetailViewController: UITableViewController {
     var datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
     
+    var currentAmount = 0.0
+    var discount = 0.0 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var vipLevelLabel: UILabel!
+    @IBOutlet weak var discountLabel: UILabel!
+    @IBOutlet weak var currentAmountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // update current amount
+        currentAmountLabel.text = String(format: "%.2f", currentAmount)
+        discountLabel.text = "0.0"
         
         vipLevelLabel.isHidden = true
         

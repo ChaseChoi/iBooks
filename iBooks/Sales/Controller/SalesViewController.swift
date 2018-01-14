@@ -16,6 +16,7 @@ class SalesViewController: UIViewController {
     
     var bookItem: Book?
     let dataSource = SalesDataSource()
+    var amount = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,14 @@ class SalesViewController: UIViewController {
         if segue.identifier == Segue.saleBookScannerView.rawValue {
             let controller = segue.destination as! ScanViewController
             controller.delegate = self
+        } else if segue.identifier == Segue.confirmPayment.rawValue {
+            let controller = segue.destination as!  PaymentViewController
+            controller.amount = dataSource.getAmount()
+            
         }
     }
+    
+    
     
 }
 

@@ -17,4 +17,5 @@ enum Segue: String {
     case superUserView
     case showPayment
     case showCustomerList
+    case confirmPayment
 }

@@ -47,4 +47,12 @@ class SalesDataSource {
         cartList.removeAll()
     }
     
+    func getAmount() -> Double {
+        var amount = 0.0
+        for book in cartList {
+            amount += book.price * Double(book.number)
+        }
+        return amount
+    }
+    
 }
