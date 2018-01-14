@@ -11,6 +11,7 @@ import UIKit
 struct TableViewReuseIdentifier {
     static let userListCell = "userThumbnail"
     static let cartListItem = "cartListItem"
+    static let customerCell = "selectUserListCell"
 }
 
 class UsersListViewController: UIViewController {

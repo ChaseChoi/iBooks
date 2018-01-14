@@ -11,6 +11,10 @@
 		1623F02C1FF3937B006224D9 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623F02B1FF3937B006224D9 /* InputTextField.swift */; };
 		164F72AE2009A23300DAC290 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164F72AD2009A23300DAC290 /* CartItemCell.swift */; };
 		164F72B02009A75900DAC290 /* SalesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164F72AF2009A75900DAC290 /* SalesDataSource.swift */; };
+		164F72B2200AFDDA00DAC290 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164F72B1200AFDDA00DAC290 /* PaymentViewController.swift */; };
+		164F72B4200B1D9500DAC290 /* PaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164F72B3200B1D9500DAC290 /* PaymentDetailViewController.swift */; };
+		1674FA48200B47A2002DB34C /* CustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1674FA47200B47A2002DB34C /* CustomerTableViewController.swift */; };
+		1674FA4C200B4915002DB34C /* CustomerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1674FA4B200B4915002DB34C /* CustomerItemCell.swift */; };
 		16B7CDB920070DFA00F239E3 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7CDB820070DFA00F239E3 /* AppDatabase.swift */; };
 		16B7CDBB2007450000F239E3 /* DBTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7CDBA2007450000F239E3 /* DBTables.swift */; };
 		16BF80232000BE9D0027E300 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF80222000BE9D0027E300 /* APIData.swift */; };
@@ -47,6 +51,10 @@
 		1623F02B1FF3937B006224D9 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		164F72AD2009A23300DAC290 /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
 		164F72AF2009A75900DAC290 /* SalesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesDataSource.swift; sourceTree = "<group>"; };
+		164F72B1200AFDDA00DAC290 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		164F72B3200B1D9500DAC290 /* PaymentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailViewController.swift; sourceTree = "<group>"; };
+		1674FA47200B47A2002DB34C /* CustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewController.swift; sourceTree = "<group>"; };
+		1674FA4B200B4915002DB34C /* CustomerItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerItemCell.swift; sourceTree = "<group>"; };
 		16B7CDB820070DFA00F239E3 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		16B7CDBA2007450000F239E3 /* DBTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTables.swift; sourceTree = "<group>"; };
 		16BF80222000BE9D0027E300 /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				164F72AD2009A23300DAC290 /* CartItemCell.swift */,
+				1674FA4B200B4915002DB34C /* CustomerItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,8 +276,11 @@
 		16FAA3D21FEFCD0200696292 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				164F72B3200B1D9500DAC290 /* PaymentDetailViewController.swift */,
+				164F72B1200AFDDA00DAC290 /* PaymentViewController.swift */,
 				16FAA3D31FEFCD2200696292 /* ScanViewController.swift */,
 				16FAA3D81FEFD40C00696292 /* SalesViewController.swift */,
+				1674FA47200B47A2002DB34C /* CustomerTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -433,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CB061A20031CA700876539 /* UIImageViewDownloadImage.swift in Sources */,
+				164F72B2200AFDDA00DAC290 /* PaymentViewController.swift in Sources */,
 				16FAA3C31FEF8FE100696292 /* UserCell.swift in Sources */,
 				16FAA3D91FEFD40C00696292 /* SalesViewController.swift in Sources */,
 				16CB0620200365C500876539 /* Functions.swift in Sources */,
@@ -451,8 +464,11 @@
 				16FAA3D11FEFA47300696292 /* Segue.swift in Sources */,
 				16FAA3C81FEF926F00696292 /* User.swift in Sources */,
 				16CB061320023F3600876539 /* AddBooksViewController.swift in Sources */,
+				164F72B4200B1D9500DAC290 /* PaymentDetailViewController.swift in Sources */,
 				16B7CDBB2007450000F239E3 /* DBTables.swift in Sources */,
+				1674FA4C200B4915002DB34C /* CustomerItemCell.swift in Sources */,
 				16CB06182002F96F00876539 /* SuperUserViewController.swift in Sources */,
+				1674FA48200B47A2002DB34C /* CustomerTableViewController.swift in Sources */,
 				16FAA3D41FEFCD2200696292 /* ScanViewController.swift in Sources */,
 				16BF80252000E8710027E300 /* APIDataSource.swift in Sources */,
 				16CB061E2003573C00876539 /* HUDView.swift in Sources */,
